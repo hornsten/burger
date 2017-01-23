@@ -46,34 +46,10 @@ app.get("/", function(req, res) {
             throw err;
         }
 
-        // var intactBurgers = [];
-        // var devouredBurgers = [];
-
-        // for (var i = 0; i < data.length; i++) {
-
-        //     if (data[i].devoured === 0) {
-        //         intactBurgers.push(data[i]);
-        //     } else {
-        //         devouredBurgers.push(data[i]);
-        //     }
-        // }
-
         res.render("index", { burgers: data });
-
 
     });
 });
-
-// app.get("/", function(req, res) {
-//     connection.query("SELECT * FROM burgers WHERE devoured = 1;", function(err, data) {
-//         if (err) {
-//             throw err;
-//         }
-
-//         res.render("index", { eaten: data });
-
-//     });
-// });
 
 app.post("/", function(req, res) {
     connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name, req.body.devoured], function(err, result) {

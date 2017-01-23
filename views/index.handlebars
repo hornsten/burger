@@ -1,41 +1,39 @@
-<h1>Eat Da Burger, Mon</h1>
-
-<ul>
-  {{#each burgers}}
-{{#unless this.devoured}}
-    <li>
-      <p>
-        {{this.id}}. {{this.burger_name}}
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="id" value="{{this.devoured}}">
-          <button type="submit">Devour</button>
-        </form>
-      </p>
-    </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-
-<h2>Devoured Burgers</h2>
-<ul>
-  {{#each burgers}}
-  {{#if this.devoured}}
-    <li>
-      <p>
-        {{this.id}}. {{this.burger_name}}
-      </p>
-    </li>
-      {{/if}}
-  {{/each}}
-</ul>
-
-
-
-
-<h2>Add a Burger</h2>
-<form method="POST" action="/" class="button-size">
-  <textarea type="text" name="burger_name"></textarea>
-  <button type="submit">Save Burger!</button>
-</form>
-
+<div class="container">
+  <h1 class="text-center">Eat Da Burger, Mon</h1>
+  <h2 class="text-center">Add a Burger</h2>
+  <form method="POST" action="/" class="button-size text-center">
+    <textarea type="text" name="burger_name"></textarea>
+    <br>
+    <button type="submit">Save Burger!</button>
+  </form>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Ready To Eat</h2>
+      <ul>
+        {{#each burgers}} {{#unless this.devoured}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="id" value="{{this.devoured}}">
+              <button type="submit">Devour</button>
+            </form>
+          </p>
+        </li>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <h2>Devoured Burgers</h2>
+      <ul>
+        {{#each burgers}} {{#if this.devoured}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}
+          </p>
+        </li>
+        {{/if}} {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,21 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col s12 center-align">
-      <h1 class="center-align text-warning">Eat Da Burger, Mon</h1>
+      <h1 class="center-align text-warning">Dat Burger</h1>
       <img class="center-align" src="/assets/img/chicken-burger.jpg"></img>
-      <h2 class="center-align">Add a Burger</h2>
+      <h3 class="center-align">What'll It Be?</h3>
       <form method="POST" action="/" class="button-size text-center">
         <textarea type="text" name="burger_name"></textarea>
         <br>
-        <button class="waves-effect waves-light btn" type="submit">Save Burger!</button>
+        <button class="waves-effect waves-light btn" type="submit">Order it!</button>
       </form>
     </div>
   </div>
   <div class="row">
     <div class="col s12 m6">
       <ul class="collection with-header">
-        <li class="collection-header">
-          <h4>Ready To Eat</h4></li>
+        <li class="collection-header center-align">
+          <h5>Ready To Eat</h5></li>
         {{#each burgers}} {{#unless this.devoured}}
         <li class="collection-item avatar">
           <img src="/assets/img/burger.jpeg" alt="" class="circle">
@@ -32,12 +32,12 @@
     </div>
     <div class="col s12 m6">
       <ul class="collection with-header">
-        <li class="collection-header">
-          <h4>Devoured Burgers</h4></li>
+        <li class="collection-header center-align">
+          <h5>Devoured Burgers</h5></li>
         {{#each burgers}} {{#if this.devoured}}
         <li class="collection-item avatar">
-          <img src="/assets/img/burger.jpeg" alt="" class="circle">
-          <span class="title">
+          <img src="/assets/img/wrapper.jpeg" alt="" class="circle">
+          <span class="title grey-text text-darken-1">
            
               {{this.id}}. {{this.burger_name}}
           

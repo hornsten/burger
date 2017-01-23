@@ -1,0 +1,30 @@
+<h1>Eat Da Burger, Mon</h1>
+
+<ul>
+  {{#each burgers}}
+    <li>
+      <p>
+        {{this.id}}. {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="id" value="{{this.devoured}}">
+          <button type="submit">Devour</button>
+        </form>
+      </p>
+    </li>
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form method="POST" action="/" class="button-size">
+  <textarea type="text" name="burger_name"></textarea>
+  <button type="submit">Save Burger!</button>
+</form>
+
+{{!-- <h2>Update a Burger</h2>
+<form action="/?_method=PUT" method="POST" class="button-size">
+  <input type="text" name="devoured" placeholder="id">
+  <textarea type="text" name="id" placeholder="what do you want to update this movie title to?"></textarea>
+  <button type="submit">Update Movie!</button>
+</form>
+ --}}

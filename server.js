@@ -61,7 +61,9 @@ app.post("/", function(req, res) {
 });
 
 //THIS is the one!!!!
+
 app.put("/:id", function(req, res) {
+
     connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.params.id], function(err, result) {
         if (err) {
             throw err;

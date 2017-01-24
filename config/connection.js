@@ -1,10 +1,12 @@
-var mysql = require('mysql');
+//In this file is everything needed to establish connection with MySQL db
+var mysql = require("mysql");
+var password = require("../password");
 
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
-    database: "burgers"
+    password: password,
+    database: "burgers_db"
 });
 
 connection.connect(function(err) {
@@ -17,4 +19,5 @@ connection.connect(function(err) {
 
 });
 
+//exports this file content so other files can access it
 module.exports = connection;

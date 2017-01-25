@@ -8,14 +8,11 @@ var connection = require('../config/connection.js');
 
 //Grabs all the data from the burgers table...all of the burgers! These are sorted later with Handlebars #if and #unless statements
 router.get("/", function(req, res) {
-    connection.query("SELECT * FROM burgers;", function(err, data) {
-        if (err) {
-            throw err;
-        }
-
+    burger.selectAll(function(data) {
+        console.log(data);
         res.render("index", { burgers: data });
-
     });
+
 });
 
 //User can enter a new burger into the system. Default value of devoured=false, so user doesn't actually enter that

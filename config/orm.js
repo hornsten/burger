@@ -21,9 +21,9 @@ var orm = {
         })
 
     },
-    updateOne: function(condition, cb) {
-        var queryString = "UPDATE burgers SET devoured=1 WHERE id =" + condition;
-        connection.query(queryString, [condition], function(err, result) {
+    updateOne: function(tableName, colVal, condition, cb) {
+        var queryString = "UPDATE ?? SET ??=1 WHERE id=?";
+        connection.query(queryString, [tableName, colVal, condition], function(err, result) {
             if (err) {
                 throw err;
             }

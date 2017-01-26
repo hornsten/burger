@@ -26,7 +26,7 @@ router.post("/", function(req, res) {
 //Changes status of burger from devoured=false to devoured=true
 
 router.put("/:id", function(req, res) {
-    burger.updateOne([req.params.id], function() {
+    burger.updateOne(req.params.id, function() {
 
         res.redirect("/");
 

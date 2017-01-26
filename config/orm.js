@@ -21,9 +21,9 @@ var orm = {
         })
 
     },
-    updateOne: function(tableName, colVal, condition, cb) {
-        var queryString = "UPDATE ?? SET ??=1 WHERE id=?";
-        connection.query(queryString, [tableName, colVal, condition], function(err, result) {
+    updateOne: function(tableName, colVal, boolean, colName, condition, cb) {
+        var queryString = "UPDATE ?? SET ??=? WHERE ??=?";
+        connection.query(queryString, [tableName, colVal, boolean, colName, condition], function(err, result) {
             if (err) {
                 throw err;
             }

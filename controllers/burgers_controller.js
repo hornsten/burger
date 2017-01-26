@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
-// var password = require("../password");
 var bodyParser = require('body-parser');
 var connection = require('../config/connection.js');
 

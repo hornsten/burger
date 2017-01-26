@@ -3,7 +3,7 @@ A Burger Builder incorporating Node/Express.js/MySQL/Handlebars
 
 
 ## Home Page
-![app image](app/public/images/fancy-burger.png?raw=true "App Image")
+![app image](app/public/img/fancy-burger.png?raw=true "App Image")
 
 
 ## Dependencies

@@ -10,26 +10,15 @@ var burger = {
         });
     },
     insertOne: function(value, cb) {
-            orm.insertOne('burgers', "burger_name", value, function(res) {
-                cb(res);
-            });
-        }
-        // updateOne: function(colVal, condition, cb) {
-        //     orm.updateOne('burgers', colVal, condition, function(res) {
-        //         cb(res);
-        //     })
-        // }
+        orm.insertOne('burgers', "burger_name", value, function(res) {
+            cb(res);
+        });
+    },
+    updateOne: function(condition, cb) {
+        orm.updateOne(condition, function(res) {
+            cb(res);
+        })
+    }
 
 }
 module.exports = burger;
-
-
-// selectAll: function(tableName, cb) {
-//         var queryString = "SELECT * FROM ??";
-//         connection.query(queryString, [tableName], function(err, result) {
-//             if (err) {
-//                 throw err;
-//             }
-//             cb(result);
-//         })
-//     }

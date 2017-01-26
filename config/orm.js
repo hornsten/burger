@@ -19,7 +19,24 @@ var orm = {
             }
             cb(result);
         })
+
+    },
+    updateOne: function(condition, cb) {
+        var queryString = "UPDATE burgers SET devoured=1 WHERE id =" + condition;
+        connection.query(queryString, [condition], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
     }
 }
+
+// connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.params.id], function(err, result) {
+//     if (err) {
+//         throw err;
+//     }
+//     res.redirect("/");
+// });
 
 module.exports = orm;

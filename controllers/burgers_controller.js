@@ -9,7 +9,7 @@ var connection = require('../config/connection.js');
 //Grabs all the data from the burgers table...all of the burgers! These are sorted later with Handlebars #if and #unless statements
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
-        console.log(data);
+
         res.render("index", { burgers: data });
     });
 
@@ -26,12 +26,10 @@ router.post("/", function(req, res) {
 //Changes status of burger from devoured=false to devoured=true
 
 router.put("/:id", function(req, res) {
+    burger.updateOne([req.params.id], function() {
 
-    connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.params.id], function(err, result) {
-        if (err) {
-            throw err;
-        }
         res.redirect("/");
+
     });
 });
 

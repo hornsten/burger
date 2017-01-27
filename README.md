@@ -1,4 +1,4 @@
-# Fancy Burger
+# :hamburger: Fancy Burger
 A Burger Builder incorporating Node/Express.js/MySQL/Handlebars/ORMs
 
 
